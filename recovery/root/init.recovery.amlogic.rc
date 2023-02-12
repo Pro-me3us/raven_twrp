@@ -5,6 +5,10 @@ on init
 
 on fs
     insmod /vendor/lib/modules/dovi_vs10.ko
+    
+service fixsymlinks /sbin/sh /fix-symlinks.sh
+    oneshot
+    seclabel u:r:recovery:s0
 
 on post-fs-data
     chown system system /sys/class/android_usb/android0/f_mass_storage/lun/file
