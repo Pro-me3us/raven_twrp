@@ -8,7 +8,7 @@
 /dev/block/data	/data		ext4	noatime,nosuid,nodev,noauto_da_alloc,discard		wait,check,encryptable=footer
 /dev/block/cache	/cache		ext4	noatime,nosuid,nodev,noauto_da_alloc			wait,check
 
-#/dev/block/metadata	/metadata	ext4	noatime,nosuid,nodev,noauto_da_alloc			wait,check,formattable
+/dev/block/metadata	/metadata	ext4	noatime,nosuid,nodev,noauto_da_alloc			wait,check,formattable
 
 /devices/*.sd/mmc_host/sd*	auto		auto	defaults					voldmanaged=sdcard1:auto,encryptable=userdata
 /devices/*dwc3/xhci-hcd.0.auto/usb?/*/host*/target*/block/sd*	auto	auto	defaults	voldmanaged=usb:auto,encryptable=userdata
@@ -20,13 +20,12 @@
 # Add for zram. zramsize can be in numeric (byte) , in percent
 /dev/block/zram0	/mnt/vendor/swap_zram0	swap	defaults						wait,zramsize=524288000
 
-
-/dev/block/bootloader	/bootloader		emmc	defaults						defaults
+#/dev/block/bootloader	/bootloader		emmc	defaults						defaults
 /dev/block/reserved	/reserved		emmc	defaults						defaults
 /dev/block/boot	/boot			emmc	defaults						defaults
 /dev/block/recovery	/recovery		emmc	defaults						defaults
 /dev/block/logo	/logo			emmc	defaults						defaults
-/dev/block/misc	/misc			emmc	defaults						defaults
+#/dev/block/misc	/misc			emmc	defaults						defaults
 /dev/block/odm		/odm			ext4	defaults						defaults
 /dev/block/product	/product		ext4	defaults						defaults
 /dev/block/tee		/tee			ext4	defaults						defaults
