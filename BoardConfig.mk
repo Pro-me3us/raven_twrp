@@ -57,20 +57,26 @@ TARGET_USES_LOGD := true
 TWRP_INCLUDE_LOGCAT := true
 TWRP_EVENT_LOGGING := false
 
+# Thermal
+TW_CUSTOM_CPU_TEMP_PATH := /sys/devices/virtual/thermal/thermal_zone0/temp
+
 # TWRP specific build flags
 TW_DEFAULT_BACKUP_LIST := "/system_image;/vendor_image;/data;/boot;"
 RECOVERY_VARIANT := twrp
-#RECOVERY_SDCARD_ON_DATA := true
 BOARD_HAS_NO_REAL_SDCARD := true
+#RECOVERY_SDCARD_ON_DATA := true
+#TW_INTERNAL_STORAGE_PATH := "/data/media/0"
+#TW_INTERNAL_STORAGE_MOUNT_POINT := "data"
 TARGET_RECOVERY_FORCE_PIXEL_FORMAT := "RGB_565"
 TW_THEME := landscape_hdpi
-#TW_INCLUDE_NTFS_3G := true
+TW_INCLUDE_NTFS_3G := true
 TW_INCLUDE_CRYPTO := true
 #TW_EXTRA_LANGUAGES := true
 TW_USE_NEW_MINADBD := true
 TW_USE_TOOLBOX := true
 TW_NO_BATT_PERCENT := true
 TW_NO_SCREEN_TIMEOUT := true
-#TW_NO_REBOOT_BOOTLOADER := true
+TW_INCLUDE_RESETPROP := true
 TW_NO_LEGACY_PROPS := true
 #TW_DEVICE_VERSION := 0
+#TW_CUSTOM_POWER_BUTTON := 113
